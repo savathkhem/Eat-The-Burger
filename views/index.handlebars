@@ -1,32 +1,41 @@
-<h1>Burgers!</h1>
-
-<h2>Burgers Available For You To Eat!</h2>
-
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> burgers/burger-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>List Of Burgers You Have Consumed!</h2>
-
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> burgers/burger-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+  <nav>
+    <div class="nav-wrapper center">
+      <h1>EAT THE BURGER!</h1>
+    </div>
+  </nav>
+  
+  <div class="row center">
+    <div class="col s5">
+      <h4>Burgers Available For You To Eat!</h4>
+        <ul>
+          {{#each cats}}
+          {{#unless sleepy}}
+          {{> burgers/burger-block sleep=true}}
+          {{/unless}}
+          {{/each}}
+        </ul>
+    </div>
+  <div class="col s2"><img class="center" src="http://www.myiconfinder.com/uploads/iconsets/256-256-50d2bb24a01a3c32510470c6cf675782-burger.png" alt="Burger"></div>
+    <div class="col s5">
+      <h4>List Of Burgers You Have Consumed!</h4>
+        <ul>
+          {{#each cats}}
+          {{#if sleepy}}
+          {{> burgers/burger-block sleep=false}}
+          {{/if}}
+          {{/each}}
+        </ul>
+    </div>
   </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+  
+  <div class="center">
+    <h3>Make A Burger</h3>
+    <form class="create-form">
+      <div class="form-group">
+        <label for="ca">Burger Name:</label>
+        <input type="text" id="ca" name="name" style="
+    width: 200px">
+      </div>
+      <button type="submit">Add</button>
+    </form>
+  </div>
